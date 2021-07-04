@@ -17,6 +17,10 @@ import XMonad.Layout.Mosaic
 import XMonad.Layout.Grid
 import XMonad.Config.Mate
 
+-- Mouse focus on activated view
+
+import XMonad.Actions.UpdatePointer
+
 -- See https://www.reddit.com/r/xmonad/comments/ndww5/dual_screens_multi_monitors_tips_and_tricks/
 import XMonad.Layout.IndependentScreens (onCurrentScreen, withScreens, workspaces')
 
@@ -193,6 +197,7 @@ main = do
       workspaces     = myWorkspaces
      , terminal      = myTerminal
      , keys          = myKeys
+     , logHook = updatePointer (0.5, 0.5) (0, 0)
      , mouseBindings = myMouseBindings
      , startupHook   = setWMName "LG3D"
      , layoutHook    = avoidStruts $ myLayout
