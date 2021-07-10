@@ -196,6 +196,8 @@ main = do
    xmonad mateConfig {
       workspaces     = myWorkspaces
      , terminal      = myTerminal
+     , borderWidth = 2
+     , focusedBorderColor = "#00FF00"
      , keys          = myKeys
      , logHook = updatePointer (0.5, 0.5) (0, 0)
      , mouseBindings = myMouseBindings
